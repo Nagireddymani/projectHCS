@@ -1,6 +1,6 @@
 package capgemini.healthcaresystem.dto;
 import java.util.Date;
-public class Appointment extends DiagnosticCenter {
+public class Appointment  {
    private  String userId;
    private long appointmentId;
    private Date datetime;
@@ -98,12 +98,21 @@ public boolean equals(Object obj) {
 //Overridden toString
 @Override
 public String toString() {
-	return "Appointment [userId=" + userId + ", appointmentId=" + appointmentId + ", datetime=" + datetime
-			+ ", approved=" + approved + ", test=" + test + ", center=" + center + "]";
+	return "Appointment [userId=" + userId + ", appointmentId=" + appointmentId + ", datetime=" + datetime + ", approved=" + approved + ", test=" + test + ", center=" + center + "]";
 }
 //default Constructor
 public Appointment() {
 	super();
+}
+public Appointment(String userId, long appointmentId, Date datetime, boolean approved, Test test,
+		DiagnosticCenter center) {
+	super();
+	this.userId = userId;
+	this.appointmentId = appointmentId;
+	this.datetime = datetime;
+	this.approved = approved;
+	this.test = test;
+	this.center = center;
 }
    
 

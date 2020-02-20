@@ -9,6 +9,7 @@ public class Test {
 	public String getTestId() {
 		return testId;
 	}
+	
 	public void setTestId(String testId) {
 		this.testId = testId;
 	}
@@ -18,6 +19,11 @@ public class Test {
 	public void setTestName(String testName) {
 		this.testName = testName;
 	}
+	@Override
+	public String toString() {
+		return "Test [testId=" + testId + ", testName=" + testName + "]";
+	}
+
 	// Overridden hashcode method
 	@Override
 	public int hashCode() {
@@ -54,7 +60,11 @@ public class Test {
 	public Test() {
 		super();
 	}
-	
+	public Test(String testId, String testName) {
+		super();
+		this.testId = testId;
+		this.testName = testName;
+	}
 	
 	
 	

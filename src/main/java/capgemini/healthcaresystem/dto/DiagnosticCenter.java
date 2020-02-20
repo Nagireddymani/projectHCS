@@ -1,10 +1,11 @@
 package capgemini.healthcaresystem.dto;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DiagnosticCenter {
 	
-// Variables
+// Variable
 private String centerName;
 private String centerId;
 List <Test> listOfTests =new ArrayList<Test>();
@@ -43,7 +44,20 @@ public String toString() {
 			+ ", appointmentList=" + appointmentList + "]";
 }
 
-// Overridden hashcode method
+
+// default Constructor
+public DiagnosticCenter() {
+	super();
+}
+
+public DiagnosticCenter(String centerName, String centerId, List<Test> listOfTests, List<Appointment> appointmentList) {
+	super();
+	this.centerName = centerName;
+	this.centerId = centerId;
+	this.listOfTests = listOfTests;
+	this.appointmentList = appointmentList;
+}
+//Overridden hashcode method
 @Override
 public int hashCode() {
 	final int prime = 31;
@@ -54,8 +68,6 @@ public int hashCode() {
 	result = prime * result + ((listOfTests == null) ? 0 : listOfTests.hashCode());
 	return result;
 }
-
-// Overridden  equals method
 @Override
 public boolean equals(Object obj) {
 	if (this == obj)
@@ -86,11 +98,6 @@ public boolean equals(Object obj) {
 	} else if (!listOfTests.equals(other.listOfTests))
 		return false;
 	return true;
-}
-
-// default Constructor
-public DiagnosticCenter() {
-	super();
 }
 
 }
